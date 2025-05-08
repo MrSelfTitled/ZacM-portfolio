@@ -13,7 +13,6 @@
       font-family: courier, sans-serif;
     }
 
-    /* Body and Container Styling */
     body {
       background-color: #000;
       color: #fcba03;
@@ -26,16 +25,12 @@
       padding: 0 20px;
     }
 
-    /* Header Styling */
     header {
       background-color: #000;
       color: #fcba03;
       padding: 20px 0;
       text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5em;
+      border-bottom: 2px dashed #fcba03;
     }
 
     nav ul {
@@ -49,277 +44,95 @@
       color: #fcba03;
       text-decoration: none;
       font-size: 1.1em;
+      text-shadow: 1px 1px 2px #000;
     }
 
-    /* Hero Section */
-    .hero {
-      background-image: url('images/GIF FOR WEBSITE.gif'); 
-      background-size: cover;
-      background-position: center;
-      height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fcba03;
-      text-align: center;
-
-      
-    }
-
-    .hero h2 {
-      font-size: 3.8em;
-      margin-bottom: 1px;
-     font-weight: bold;
-    }
-
-    /* About Section */
-    .about {
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .about h2 {
-      margin-bottom: 20px;
-      font-size: 2em;
-
-    }
-
-    .about p {
-      font-size: 1.1em;
-      max-width: 700px;
-      margin: auto;
-      line-height: 1.6;
-    }
-
-    /* Portfolio Gallery */
     .portfolio {
       padding: 50px 20px;
       background-color: #000;
       text-align: center;
     }
 
-    .portfolio h2 {
-      margin-bottom: 40px;
-      font-size: 2em;
-    }
-
-
-     .portfolio P {
-      margin-bottom: 40px;
-      font-size: 1em;
-    
-    }
-
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 5fr));
-      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 15px;
     }
 
     .portfolio-item {
       position: relative;
       overflow: hidden;
       border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background-color: #1a1a1a;
+      padding: 10px;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 2px dashed #fcba03;
+    }
+
+    .portfolio-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 15px #fcba03;
     }
 
     .portfolio-item img {
       width: 100%;
       display: block;
-      border-radius: 8px;
+      border-radius: 4px;
+      filter: grayscale(60%);
+      transition: filter 0.3s ease;
     }
 
-    .portfolio-item .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: #fcba03;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
+    .portfolio-item:hover img {
+      filter: grayscale(0%);
+    }
+
+    .portfolio-item h3 {
+      margin: 10px 0 5px;
       font-size: 1.2em;
-    }
-
-    .portfolio-item:hover .overlay {
-      opacity: 1;
-    }
-/* showreel section */
-
-.showreel {
-      padding: 50px 20px;
-      text-align: center;
-      background-color: #000;
       color: #fcba03;
-}
-.showreel h2 {
-      margin-bottom: 20px;
-      font-size: 2em;
-  }
-  /* cv section */
-
-.cv {
-      padding: 50px 20px;
-      text-align: center;
-      background-color: #000;
-      color: #fcba03;
- }
-  .contact h2 {
-      margin-bottom: 20px;
-      font-size: 2em;
-}
-    /* Contact Section */
-    .contact {
-      padding: 50px 20px;
-      text-align: center;
-      background-color: #000;
-      color: #fcba03;
+      text-shadow: 1px 1px 2px #000;
     }
 
-    .contact h2 {
-      margin-bottom: 20px;
-      font-size: 2em;
+    .portfolio-item p {
+      font-size: 1em;
+      color: #d9d9d9;
+      text-shadow: 1px 1px 2px #000;
     }
 
-    .contact p {
-      font-size: 1.1em;
-      margin-bottom: 10px;
-    }
-
-    .contact a {
-      color: #fcba03;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #000;
-      color: #fcba03;
-      text-align: center;
-      padding: 10px 0;
-      font-size: 0.9em;
-
-    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
-    <h1> ~ </h1>
+    <h1>~ Zac Main ~</h1>
     <nav>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#showreel">Showreel</a></li>
-        <li><a href="#cv">CV</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div>
-      <h2>Zac Main</h2>
-      <p>Making the things, you never knew you needed.</p>
+  <section id="portfolio" class="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="images/sample.jpg" alt="Sample Project">
+        <h3>Project Title</h3>
+        <p>Role: Director, Editor</p>
+        <p>Description: A brief description of what you did in this project.</p>
+      </div>
+
+      <div class="portfolio-item">
+        <img src="images/sample.jpg" alt="Sample Project">
+        <h3>Project Title</h3>
+        <p>Role: Cinematographer</p>
+        <p>Description: A brief description of what you did in this project.</p>
+      </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p> Hey! I’m Zac Main, I am  a  Creative and dedicated filmmaker with six years of experience, specializing in music video production and personal projects. I have collaborated with Self~Titled, The Ivy Walkers, and Orphix to bring artist visions to life through compelling visuals and storytelling. My work demonstrates a strong aestheticsense and a commitment to pushing creative boundaries, whether workingin collaboration or on solo projects. Skilled in directing, cinematography, and post-production, I am passionate about creating impactful, memorable media. I’m eager to bring my experience and collaborative spirit to new projects and contribute to innovative storytelling in the film industry. I Am well trained in the following programs, adobe premiere pro, adobe after effects, davinci resolve and blender. </p>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="portfolio">
-    <h2>Portfolio</h2>
-<P> Written, Directed, Edited by Zac Main <p>
-    <div class="portfolio-grid">
-      <!-- Downhill by The Ivy Walkers -->
-      <div class="portfolio-item">
-     <a href="https://www.youtube.com/watch?v=1fZWqMjwHTw" target="_blank" class="portfolio-item">
-        <img src="images/thumbnail downhill.JPG" alt="Project 1"> 
-        <div class="overlay"> Downhill by The Ivy Walkers </div>
-      </div>
-      <!-- Grapefruit by Orphix -->
-      <div class="portfolio-item">
-<a href="https://www.youtube.com/watch?v=cHrX53ES8Mk" target="_blank" class="portfolio-item">
-        <img src="images/thumbnail grape.jpg" alt="Project 2"> 
-        <div class="overlay"> Grapefruit by Orphix </div>
-      </div>
-      <!-- Summer days by The Ivy Walkers -->
-      <div class="portfolio-item">
-<a href="https://www.youtube.com/watch?v=81l8zJDXplI" target="_blank" class="portfolio-item">
-        <img src="images/THUMBNAIL summer.JPG" alt="Project 3"> 
-        <div class="overlay"> Summer days by The Ivy Walkers </div>
-      </div>
-     
-<!-- cult test --> 
-<div class="portfolio-item"> 
-<a href="https://www.youtube.com/watch?v=imP8A_xlB2s" class="portfolio-item"> 
-<img src="images/thumnail cult.JPG">
- <div class="overlay"> CultConcept Cloth Test.ZIP </div> 
-</div>
-
-<!-- maybe it was the right choice -->
-      <div class="portfolio-item">
-<a href="https://www.youtube.com/watch?v=mPp0OqyPd5s" target="_blank" class="portfolio-item">
-        <img src="images/thumbnail right rar.JPG" alt="Project 3"> 
-        <div class="overlay"> Maybe it was the right choice.rar </div>
-      </div>
-<!-- ivy live at night cat -->
-      <div class="portfolio-item">
-<a href="https://www.youtube.com/watch?v=EpDjfIQAk_c&t=267s" class="portfolio-item">
-        <img src="images/thumbnail night cat.JPG"> 
-        <div class="overlay"> THE IVY WALKERS - LIVE AT THE NIGHT CAT </div>
-      </div>
-<!-- blender render st -->
-      <div class="portfolio-item">
-<a href="https://youtu.be/nhcy6MMZZ_4" class="portfolio-item">
-        <img src="images/thumbnail render.JPG"> 
-        <div class="overlay"> Blender render test for self~titled </div>
-      </div>
-<!-- endless -->
-      <div class="portfolio-item">
-<a href="https://www.youtube.com/watch?v=ye-twUXxbUo" target="_blank" class="portfolio-item">
-        <img src="images/endless thumbnail.png" alt="Project 3"> 
-        <div class="overlay"> endless </div>
-      </div>
-
-  </section>
- </a>
-<!-- showreel -->
- <section id="showreel" class="showreel">
-  <h2><a href="https://youtu.be/5CRfA6Is5AM" target="_blank" style="color: #fcba03; text-decoration: none;">Click here for SHOWREEL</a></h2>
-</section>
-  
-<!-- cv -->
-  <section id="cv" class="cv">
-</h2><a href="images/cover letter.pdf" target="_blank" style="color: #fcba03; text-decoration: none;" >CLICK TO VIEW CV</a></h2>
-  </section>
-
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p> zacbmx60@gmail.com </p>
-    <p1> or send a mailing pigeon to these coordinates 53.059089, -1.636883 </a> </p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Zac Main. All rights reserved.</p>
-<p><a href="snake.html" style="color: #fcba03; text-decoration: none;">sss</a></p>
-  </footer>
-
-
-
 </body>
-</html> 
+</html>
