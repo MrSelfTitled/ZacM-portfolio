@@ -10,32 +10,23 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: courier, sans-serif;
+      font-family: 'Courier New', Courier, monospace;
+      scroll-behavior: smooth;
     }
 
     body {
       background-color: #000;
-      color: #fcba03;
+      color: #f9f236;
       line-height: 1.6;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 20px;
-      text-align: center;
     }
 
     header {
       background-color: #000;
-      color: #fcba03;
+      color: #f9f236;
       padding: 20px 0;
       text-align: center;
-      border-bottom: 2px dashed #fcba03;
-    }
-    
- header h1 {
-      font-size: 2.5em;
+      border-bottom: 2px dashed #f9f236;
+      text-shadow: 1px 1px 2px #000;
     }
 
     nav ul {
@@ -46,237 +37,177 @@
     }
 
     nav a {
-      color: #fcba03;
+      color: #f9f236;
       text-decoration: none;
       font-size: 1.1em;
-      text-shadow: 1px 1px 2px #000;
+      transition: color 0.3s ease;
     }
-    
 
-    /* Hero Section */
+    nav a:hover {
+      color: #ffffff;
+    }
+
     .hero {
-      background-image: url('images/GIF FOR WEBSITE.gif'); 
-      background-size: cover;
-      background-position: center;
-      height: 80vh;
+      background: url('images/GIF FOR WEBSITE.gif') center/cover no-repeat;
+      height: 60vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fcba03;
+      color: #f9f236;
+      text-shadow: 2px 2px 4px #000;
       text-align: center;
-
-      
+      transition: opacity 0.8s ease-in-out;
     }
 
     .hero h2 {
-      font-size: 3.8em;
-      margin-bottom: 1px;
-     font-weight: bold;
+      font-size: 2.8em;
     }
 
-    /* About Section */
-    .about {
-      padding: 50px 20px;
+    .about-description {
+      max-width: 700px;
+      margin: 20px auto;
+      font-size: 1em;
       text-align: center;
+      color: #f9f236;
+      line-height: 1.6;
     }
 
-    .about h2 {
-      margin-bottom: 20px;
-      font-size: 2em;
-      
-/* port section */
-    
     .portfolio {
       padding: 50px 20px;
-      background-color: #000;
       text-align: center;
+      transition: opacity 0.8s ease-in-out;
     }
 
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 15px;
+      gap: 20px;
     }
 
     .portfolio-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-      background-color: #1a1a1a;
-      padding: 10px;
+      background: #1a1a1a;
+      padding: 15px;
+      border: 2px dashed #f9f236;
       text-align: left;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 2px dashed #fcba03;
+      cursor: pointer;
+      position: relative;
     }
 
     .portfolio-item:hover {
-      transform: scale(0.80);
-      box-shadow: 0 0 15px #fcba03;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #f9f236;
     }
 
     .portfolio-item img {
       width: 100%;
       display: block;
-      border-radius: 4px;
-      filter: grayscale(60%);
+      margin-bottom: 10px;
+      filter: grayscale(70%);
       transition: filter 0.3s ease;
+      border: 2px dashed #f9f236;
     }
 
     .portfolio-item:hover img {
       filter: grayscale(0%);
     }
 
-    .portfolio-item h3 {
-      margin: 10px 0 5px;
+    .showreel {
+      padding: 30px 20px;
+      text-align: center;
+      background: #000;
+      border-top: 2px dashed #f9f236;
+      border-bottom: 2px dashed #f9f236;
+      margin: 30px 0;
+    }
+
+    .showreel a {
       font-size: 1.2em;
-      color: #fcba03;
-      text-shadow: 1px 1px 2px #000;
-    }
-
-    .portfolio-item p {
-      font-size: 1em;
-      color: #d9d9d9;
-      text-shadow: 1px 1px 2px #000;
-    } 
-
-      /* add more shit */
-
-      
-      /* showreel section */
-
-.showreel {
-      padding: 50px 20px;
-      text-align: center;
-      background-color: #000;
-      color: #fcba03;
-}
-.showreel h2 {
-      margin-bottom: 20px;
-      font-size: 2em;
-  }
-  /* cv section */
-
-.cv {
-      padding: 50px 20px;
-      text-align: center;
-      background-color: #000;
-      color: #fcba03;
- }
-  .contact h2 {
-      margin-bottom: 20px;
-      font-size: 2em;
-}
-    /* Contact Section */
-    .contact {
-      padding: 50px 20px;
-      text-align: center;
-      background-color: #000;
-      color: #fcba03;
-    }
-
-    .contact h2 {
-      margin-bottom: 20px;
-      font-size: 2em;
-    }
-
-    .contact p {
-      font-size: 1.1em;
-      margin-bottom: 10px;
-    }
-
-    .contact a {
-      color: #fcba03;
+      color: #f9f236;
       text-decoration: none;
-      font-weight: bold;
     }
 
-    /* Footer */
+    .contact {
+      text-align: center;
+      padding: 40px 0;
+    }
+
     footer {
       background-color: #000;
-      color: #fcba03;
+      color: #f9f236;
       text-align: center;
-      padding: 10px 0;
+      padding: 15px 0;
       font-size: 0.9em;
+    }
 
+    section {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
   </style>
+  <script>
+    document.addEventListener('scroll', function() {
+      document.querySelectorAll('section').forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          section.classList.add('visible');
+        }
+      });
+    });
+  </script>
 </head>
 <body>
 
   <header>
-    <h1> ~ </h1>
+    <h1>~ Zac Main ~</h1>
     <nav>
       <ul>
         <li><a href="#about">About</a></li>
+        <li><a href="#showreel">Showreel</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-   <!-- Hero Section -->
-  <section class="hero">
-    <div>
-      <h2>Zac Main</h2>
-      <p>Making the things, you never knew you needed.</p>
-    </div>
+  <section class="hero" id="about">
+    <h2>Making the things, you never knew you needed.</h2>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p> Hey! I’m Zac Main, I am  a  Creative and dedicated filmmaker with six years of experience, specializing in music video production and personal projects. I have collaborated with Self~Titled, The Ivy Walkers, and Orphix to bring artist visions to life through compelling visuals and storytelling. My work demonstrates a strong aestheticsense and a commitment to pushing creative boundaries, whether workingin collaboration or on solo projects. Skilled in directing, cinematography, and post-production, I am passionate about creating impactful, memorable media. I’m eager to bring my experience and collaborative spirit to new projects and contribute to innovative storytelling in the film industry. I Am well trained in the following programs, adobe premiere pro, adobe after effects, davinci resolve and blender. </p>
+  <section class="about-description">
+    <p>I'm Zac Main, a creative and dedicated filmmaker specializing in music video production and personal film projects. I bring stories to life with a distinct visual style and a passion for innovative storytelling.</p>
   </section>
 
-  <!-- port sec -->
+  <section id="showreel" class="showreel">
+    <h2><a href="https://youtu.be/5CRfA6Is5AM" target="_blank">SHOWREEL - CLICK TO WATCH</a></h2>
+  </section>
 
   <section id="portfolio" class="portfolio">
     <h2>Portfolio</h2>
     <div class="portfolio-grid">
       <div class="portfolio-item">
-        <img src="images/thumbnail downhill.JPG">
-        <h3> The Ivy Walkers - Down Hill </h3>
-        <p>Role: Director, Editor </p>
-        <p> Sep 29, 2024 </p>
-      </div>
-
-      <div class="portfolio-item">
-        <img src="images/sample.jpg" alt="Sample Project">
+        <img src="images/sample.jpg" alt="Project Image">
         <h3>Project Title</h3>
-        <p>Role: Cinematographer</p>
-        <p>Description: A brief description of what you did in this project.</p>
+        <p>Role: Director, Editor</p>
       </div>
     </div>
   </section>
 
-   </section>
- </a>
-<!-- showreel -->
- <section id="showreel" class="showreel">
-  <h2><a href="https://youtu.be/5CRfA6Is5AM" target="_blank" style="color: #fcba03; text-decoration: none;">Click here for SHOWREEL</a></h2>
-</section>
-  
-<!-- cv -->
-  <section id="cv" class="cv">
-</h2><a href="images/cover letter.pdf" target="_blank" style="color: #fcba03; text-decoration: none;" >CLICK TO VIEW CV</a></h2>
-  </section>
-
-
-  <!-- Contact Section -->
   <section id="contact" class="contact">
     <h2>Contact Me</h2>
-    <p> zacbmx60@gmail.com </p>
-    <p1> or send a mailing pigeon to these coordinates 53.059089, -1.636883 </a> </p>
+    <p>Email: zacbmx60@gmail.com</p>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2024 Zac Main. All rights reserved.</p>
-<p><a href="snake.html" style="color: #fcba03; text-decoration: none;">sss</a></p>
+    <p>&copy; 2024 Zac Main. All rights reserved. | Self~Titled</p>
   </footer>
-
-
 
 </body>
 </html>
