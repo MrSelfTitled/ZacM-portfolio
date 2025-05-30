@@ -4,167 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zac Main ~ Visual Portfolio</title>
-  <style>
-    /* Basic Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Courier New', Courier, monospace;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: #000;
-      color: #f9f236;
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: #000;
-      color: #f9f236;
-      padding: 20px 0;
-      text-align: center;
-      border-bottom: 2px dashed #f9f236;
-      text-shadow: 1px 1px 2px #000;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      gap: 20px;
-    }
-
-    nav a {
-      color: #f9f236;
-      text-decoration: none;
-      font-size: 1.1em;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #ffffff;
-    }
-
-    .hero {
-      background: url('images/GIF FOR WEBSITE.gif') center/cover no-repeat;
-      height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #f9f236;
-      text-shadow: 2px 2px 4px #000;
-      text-align: center;
-      transition: opacity 0.8s ease-in-out;
-    }
-
-    .hero h2 {
-      font-size: 2.8em;
-    }
-
-    .about-description {
-      max-width: 700px;
-      margin: 20px auto;
-      font-size: 1em;
-      text-align: center;
-      color: #f9f236;
-      line-height: 1.6;
-    }
-
-    .portfolio {
-      padding: 20px 20px;
-      text-align: center;
-      transition: opacity 0.8s ease-in-out;
-    }
-
-   .portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 30px;
-  padding: 30px;
-}
-
-    }
-
-    .portfolio-item {
-      background: #1a1a1a;
-      padding: 15px;
-      border: 2px dashed #f9f236;
-      text-align: left;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      position: relative;
-    }
-
-    .portfolio-item:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px #f9f236;
-    }
-
-    .portfolio-item img {
-      width: 100%;
-      display: block;
-      margin-bottom: 10px;
-      filter: grayscale(70%);
-      transition: filter 0.3s ease;
-      border: 2px dashed #f9f236;
-    }
-
-    .portfolio-item:hover img {
-      filter: grayscale(0%);
-    }
-
-    .showreel {
-      padding: 30px 20px;
-      text-align: center;
-      background: #000;
-      border-top: 2px dashed #f9f236;
-      border-bottom: 2px dashed #f9f236;
-      margin: 30px 0;
-    }
-
-    .showreel a {
-      font-size: 1.2em;
-      color: #f9f236;
-      text-decoration: none;
-    }
-
-    .contact {
-      text-align: center;
-      padding: 40px 0;
-    }
-
-    footer {
-      background-color: #000;
-      color: #f9f236;
-      text-align: center;
-      padding: 15px 0;
-      font-size: 0.9em;
-    }
-
-    section {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-  </style>
-  <script>
-    document.addEventListener('scroll', function() {
-      document.querySelectorAll('section').forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          section.classList.add('visible');
-        }
-      });
-    });
-  </script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://fav.farm/🌀" type="image/x-icon">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -184,75 +26,108 @@
     <h2>Making the things, you never knew you needed.</h2>
   </section>
 
-  <section class="about-description">
+  <section class="about-description" data-aos="fade-up">
     <p>I'm Zac Main, a creative and dedicated filmmaker specializing in music video production and personal film projects. I bring stories to life with a distinct visual style and a passion for innovative storytelling.</p>
   </section>
 
-  <section id="showreel" class="showreel">
+  <section id="showreel" class="showreel" data-aos="fade-up">
     <h2><a href="https://youtu.be/5CRfA6Is5AM" target="_blank">SHOWREEL - CLICK TO WATCH</a></h2>
   </section>
 
-<section id="portfolio" class="portfolio">
-  <h2>Portfolio</h2>
-  <div class="portfolio-grid">
-    <div class="portfolio-item">
-      <img src="images/thumbnail downhill.JPG" alt="Project Image">
-      <h3>Down Hill</h3>
-      <h4>by The Ivy Walkers</h4>
-      <p>Role: Director, Editor</p>
-    </div>
-    <div class="portfolio-item">
-      <img src="images/THUMBNAIL summer.JPG" alt="Project Image">
-      <h3>Summer Days</h3>
-       <h4>by The Ivy Walkers</h4>
-      <p>Role: Director, Editor</p>
-    </div>
-      <div class="portfolio-item">
-      <img src="images/thumbnail grape.jpg" alt="Project Image">
-      <h3>Grapefruit</h3>
-         <h4>by ORPHIX</h4>
-      <p>Role: Director, Editor</p>
-    </div>
-      <div class="portfolio-item">
-      <img src="images/deadstick gizz my edit.png" alt="Project Image">
-      <h3>Deadstick</h3>
-         <h4>by King Gizzard & the Lizard Wizard</h4>
-      <p>Role: Runner </p>
-     </div>
-     <div class="portfolio-item">
-      <img src="images/thumbnail night cat.JPG" alt="Project Image">
-      <h3>Live at the Night Cat</h3>
-         <h4>By Live at the Night Cat</h4>
-      <p>Role: Director, Editor</p>
-       </div>
-     <div class="portfolio-item">
-      <img src="images/endless thumbnail.png" alt="Project Image">
-      <h3>Endless</h3>
-      <p>Role: Director, Editor</p>
-          </div>
-     <div class="portfolio-item">
-      <img src="images/thumbnail render.JPG" alt="Project Image">
-      <h3>Blender_Render.OBJ</h3>
-      <p>Role: Director, Editor, 3D Artist</p>
-         </div>
-     <div class="portfolio-item">
-      <img src="images/thumnail cult.JPG" alt="Project Image">
-      <h3>CultConcept_Cloth_Test.ZIP</h3>
-      <p>Role: Director, Editor</p>
-        </div>
-     <div class="portfolio-item">
-      <img src="images/thumbnail right rar.JPG" alt="Project Image">
-      <h3>the_right_choice.rar</h3>
-      <p>Role: Director, Editor</p>
-  </div>
-</section>
+  <section id="portfolio" class="portfolio">
+    <h2 data-aos="fade-up">Portfolio</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item" data-aos="fade-up">
+        <a href="https://www.youtube.com/watch?v=1fZWqMjwHTw" target="_blank">
+          <img src="images/thumbnail downhill.JPG" alt="Down Hill - Music Video by The Ivy Walkers">
+        </a>
+        <h3>Down Hill</h3>
+        <h4>by The Ivy Walkers</h4>
+        <p>Role: Director, Editor</p>
+      </div>
 
+      <div class="portfolio-item" data-aos="fade-up">
+        <a href="https://www.youtube.com/watch?v=81l8zJDXplI" target="_blank">
+          <img src="images/THUMBNAIL summer.JPG" alt="Summer Days - Music Video by The Ivy Walkers">
+        </a>
+        <h3>Summer Days</h3>
+        <h4>by The Ivy Walkers</h4>
+        <p>Role: Director, Editor</p>
+      </div>
 
-  <section id="contact" class="contact">
+      <div class="portfolio-item" data-aos="fade-up">
+        <a href="https://www.youtube.com/watch?v=cHrX53ES8Mk" target="_blank">
+          <img src="images/thumbnail grape.jpg" alt="Grapefruit - Music Video by ORPHIX">
+        </a>
+        <h3>Grapefruit</h3>
+        <h4>by ORPHIX</h4>
+        <p>Role: Director, Editor</p>
+      </div>
+
+      <div class="portfolio-item" data-aos="fade-up">
+        <a href="https://www.youtube.com/watch?v=H7t2FL1SRaE" target="_blank">
+          <img src="images/deadstick gizz my edit.png" alt="Deadstick - King Gizzard">
+        </a>
+        <h3>Deadstick</h3>
+        <h4>by King Gizzard & the Lizard Wizard</h4>
+        <p>Role: Runner</p>
+      </div>
+
+      <div class="portfolio-item" data-aos="fade-up">
+        <a href="https://www.youtube.com/watch?v=EpDjfIQAk_c&t=269s" target="_blank">
+          <img src="images/thumbnail night cat.JPG" alt="Live at the Night Cat">
+        </a>
+        <h3>Live at the Night Cat</h3>
+        <h4>By Live at the Night Cat</h4>
+        <p>Role: Director, Editor</p>
+      </div>
+
+      <div class="portfolio-item" data-aos="fade-up">
+        <a href="https://www.youtube.com/watch?v=ye-twUXxbUo" target="_blank">
+          <img src="images/endless thumbnail.png" alt="Endless">
+        </a>
+        <h3>Endless</h3>
+        <p>Role: Director, Editor</p>
+      </div>
+
+      <div class="portfolio-item" data-aos="fade-up">
+        <a href="https://www.youtube.com/watch?v=nhcy6MMZZ_4" target="_blank">
+          <img src="images/thumbnail render.JPG" alt="Blender_Render.OBJ">
+        </a>
+        <h3>Blender_Render.OBJ</h3>
+        <p>Role: Director, Editor, 3D Artist</p>
+      </div>
+
+      <div class="portfolio-item" data-aos="fade-up">
+        <a href="https://www.youtube.com/watch?v=imP8A_xlB2s" target="_blank">
+          <img src="images/thumnail cult.JPG" alt="CultConcept_Cloth_Test.ZIP">
+        </a>
+        <h3>CultConcept_Cloth_Test.ZIP</h3>
+        <p>Role: Director, Editor</p>
+      </div>
+
+      <div class="portfolio-item" data-aos="fade-up">
+        <a href="https://www.youtube.com/watch?v=mPp0OqyPd5s" target="_blank">
+          <img src="images/thumbnail right rar.JPG" alt="the_right_choice.rar">
+        </a>
+        <h3>the_right_choice.rar</h3>
+        <p>Role: Director, Editor</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" data-aos="fade-up">
     <h2>Contact Me</h2>
-    <p>Email: zacbmx60@gmail.com</p>
+    <p>Email: <a href="mailto:zacbmx60@gmail.com">zacbmx60@gmail.com</a></p>
   </section>
 
   <footer>
     <p>&copy; 2024 Zac Main. All rights reserved. | Self~Titled</p>
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
