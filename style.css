@@ -1,0 +1,206 @@
+/* === style.css === /
+
+/ General Reset */
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Courier New', Courier, monospace;
+scroll-behavior: smooth;
+cursor: url('cursor-yellow.cur'), auto;,
+}
+
+body {
+  background-color: #000;
+  color: #e9e220;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Loading Screen /
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  color: #e9e220;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-family: 'Courier New', Courier, monospace;
+  animation: crt-flicker 1.5s ease-in-out;
+}
+
+@keyframes crt-flicker {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  40% { opacity: 0.3; }
+  60% { opacity: 1; }
+  80% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
+header {
+  background: #000;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 2px dotted #e9e220;
+  text-shadow: 1px 1px 2px #000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #e9e220;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+nav a:hover {
+  color: white;
+}
+
+.hero {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('images/GIF FOR WEBSITE.gif') center/cover no-repeat;
+  text-align: center;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+}
+
+.about-description {
+  text-align: center;
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 0 20px;
+  font-size: 1rem;
+}
+
+.showreel {
+  text-align: center;
+  padding: 30px 20px;
+  border-top: 2px dotted #e9e220;
+  border-bottom: 2px dotted #e9e220;
+}
+
+.showreel a {
+  color: #e9e220;
+  text-decoration: none;
+  font-size: 1.3em;
+}
+
+.portfolio {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 30px;
+}
+
+.portfolio-item {
+  background-color: #1a1a1a;
+  border: 2px dotted #e9e220;
+  padding: 15px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.05);
+}
+
+.portfolio-item img {
+  width: 100%;
+  border: 2px dotted #e9e220;
+  filter: grayscale(70%);
+  transition: filter 0.3s ease;
+}
+
+.portfolio-item:hover img {
+  filter: grayscale(0%);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal iframe {
+  width: 80vw;
+  height: 45vw;
+  max-width: 800px;
+  max-height: 450px;
+  border: 2px solid #e9e220;
+}
+
+.resume-link {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.resume-link a {
+  color: #e9e220;
+  text-decoration: underline;
+  font-size: 1em;
+}
+
+.contact {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+footer {
+  background: #000;
+  border-top: 2px dotted #e9e220;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+footer a {
+  margin: 0 10px;
+  color: #e9e220;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+/ Animation Classes */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-in-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
