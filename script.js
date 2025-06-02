@@ -1,53 +1,21 @@
-// script.js
+document.addEventListener("DOMContentLoaded", function () {
+  const thumbnails = document.querySelectorAll(".thumbnail");
+  const modal = document.getElementById("videoModal");
+  const modalVideo = document.getElementById("modalVideo");
 
-// ==========================
-// CRT LOADING ANIMATION
-// ==========================
-window.addEventListener("load", () => {
-  const loader = document.querySelector("#crt-loader");
-  setTimeout(() => {
-    loader.classList.add("loaded");
-  }, 1500);
-});
-
-// ==========================
-// VIDEO MODAL FUNCTIONALITY
-// ==========================
-document.querySelectorAll(".thumbnail").forEach((thumb) => {
-  thumb.addEventListener("click", function () {
-    const videoId = this.getAttribute("data-video-id");
-    const modal = document.querySelector("#video-modal");
-    const iframe = document.querySelector("#video-modal iframe");
-    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-    modal.classList.add("open");
+  thumbnails.forEach((thumb) => {
+    thumb.addEventListener("click", () => {
+      const videoUrl = thumb.getAttribute("data-video");
+      modalVideo.src = videoUrl + "?autoplay=1";
+      modal.classList.add("open");
+    });
   });
-});
 
-document.querySelector("#video-modal").addEventListener("click", function (e) {
-  // Close only if click is outside iframe
-  if (e.target === this) {
-    const iframe = document.querySelector("#video-modal iframe");
-    iframe.src = ""; // stop video
-    this.classList.remove("open");
-  }
-});
-
-// ==========================
-// AOS INIT (Animate on Scroll)
-// ==========================
-AOS.init({
-  duration: 800,
-  once: true,
-});
-
-// ==========================
-// CUSTOM CURSOR
-// ==========================
-const cursor = document.createElement("div");
-cursor.id = "custom-cursor";
-document.body.appendChild(cursor);
-
-document.addEventListener("mousemove", (e) => {
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
+  // Close modal when clicking outside the iframe
+  modal.addEventListener("click", (e) => {
+    if (!modalVideo.contains(e.target)) {
+      modal.classList.remove("open");
+      modalVideo.src = ""; // Stop video playback
+    }
+  });
 });
