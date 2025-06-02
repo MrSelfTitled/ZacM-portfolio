@@ -1,28 +1,27 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const thumbnails = document.querySelectorAll(".thumbnail");
+document.addEventListener("DOMContentLoaded", () => {
+  const thumbnails = document.querySelectorAll(".portfolio-item");
   const modal = document.getElementById("videoModal");
-  const modalContent = document.querySelector(".modal-content");
-  const modalVideo = document.getElementById("modalVideo");
+  const modalContent = document.getElementById("modalContent");
 
-  if (!modal || !modalContent || !modalVideo || thumbnails.length === 0) {
-    console.warn("One or more elements for modal video playback not found.");
-    return;
-  }
-
-  thumbnails.forEach((thumb) => {
-    thumb.addEventListener("click", () => {
-      const videoUrl = thumb.getAttribute("data-video");
+  thumbnails.forEach((item) => {
+    item.addEventListener("click", () => {
+      const videoUrl = item.getAttribute("data-video-url");
       if (videoUrl) {
-        modalVideo.src = videoUrl + "?autoplay=1";
-        modal.classList.add("open");
+        modalContent.innerHTML = `
+          <iframe width="100%" height="100%" src="${videoUrl}?autoplay=1" 
+            frameborder="0" allowfullscreen allow="autoplay"></iframe>
+        `;
+        modal.classList.add("show");
       }
     });
   });
 
+  // Close modal when clicking outside the content
   modal.addEventListener("click", (e) => {
-    if (!modalContent.contains(e.target)) {
-      modal.classList.remove("open");
-      modalVideo.src = ""; // Stop video playback
+    if (e.target === modal) {
+      modal.classList.remove("show");
+      modalContent.innerHTML = ""; // Stop video playback
     }
   });
 });
+
