@@ -3,79 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zac Main ~ Visual Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="icon" href="favicon.ico"/>
-  <meta name="description" content="Portfolio of Zac Main, a Melbourne-based filmmaker specializing in music videos, 3D work, and live performance visuals."/>
-  <meta property="og:title" content="Zac Main Portfolio"/>
-  <meta property="og:description" content="Creative filmmaking and visual storytelling."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:image" content="images/thumbnail.jpg"/>
+  <title>Zac M Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="crt-loader"><span class="crt-text">Loading...</span></div>
   <header>
-    <h1>~ Zac Main ~</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#showreel">Showreel</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <h1>Zac M</h1>
+    <p>Filmmaker & Editor</p>
   </header>
 
-  <section class="hero" id="about">
-    <h2>Making the things, you never knew you needed.</h2>
-  </section>
-
-  <section class="about-description">
-    <p>I'm Zac Main, a creative and dedicated filmmaker specializing in music video production and personal film projects. I bring stories to life with a distinct visual style and a passion for innovative storytelling.</p>
-  </section>
-
-  <section id="showreel" class="showreel">
-    <h2><a href="https://youtu.be/5CRfA6Is5AM" target="_blank">SHOWREEL - CLICK TO WATCH</a></h2>
-  </section>
-
-  <section id="portfolio" class="portfolio">
-    <h2>Portfolio</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item" data-video="https://www.youtube.com/embed/1fZWqMjwHTw">
-        <img src="images/thumbnail downhill.JPG" alt="Down Hill thumbnail"/>
-        <h3>Down Hill</h3>
-        <h4>by The Ivy Walkers</h4>
-        <p>Role: Director, Editor</p>
+  <main>
+    <section class="portfolio">
+      <h2>My Work</h2>
+      <div class="portfolio-grid">
+        <!-- Portfolio items -->
+        <div class="portfolio-item" data-video-url="https://www.youtube.com/embed/VIDEO_ID_1">
+          <img src="images/thumbnail1.jpg" alt="Project 1" />
+          <p>Project Title 1</p>
+        </div>
+        <div class="portfolio-item" data-video-url="https://www.youtube.com/embed/VIDEO_ID_2">
+          <img src="images/thumbnail2.jpg" alt="Project 2" />
+          <p>Project Title 2</p>
+        </div>
+        <!-- Add more items as needed -->
       </div>
-      <div class="portfolio-item" data-video="https://www.youtube.com/embed/81l8zJDXplI">
-        <img src="images/THUMBNAIL summer.JPG" alt="Summer Days thumbnail"/>
-        <h3>Summer Days</h3>
-        <h4>by The Ivy Walkers</h4>
-        <p>Role: Director, Editor</p>
-      </div>
-      <!-- More projects as previously listed... -->
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>Email: zacbmx60@gmail.com</p>
-    <p><a href="resume.pdf" target="_blank">Download Resume</a></p>
-    <div class="socials">
-      <a href="https://www.instagram.com/" target="_blank">Instagram</a> |
-      <a href="https://www.youtube.com/" target="_blank">YouTube</a>
-    </div>
-  </section>
+  <!-- Modal for video playback -->
+  <div id="videoModal" class="modal">
+    <div class="modal-content" id="modalContent"></div>
+  </div>
 
   <footer>
-    <p>&copy; 2024 Zac Main. All rights reserved. | Self~Titled</p>
+    <p>Follow me:</p>
+    <ul class="social-links">
+      <li><a href="https://www.instagram.com/yourusername" target="_blank">Instagram</a></li>
+      <li><a href="https://www.youtube.com/yourchannel" target="_blank">YouTube</a></li>
+      <li><a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></li>
+    </ul>
   </footer>
-
-  <div class="modal-overlay" id="modal">
-    <div class="modal-content">
-      <iframe id="modal-video" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>
