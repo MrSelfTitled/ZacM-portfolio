@@ -1,129 +1,59 @@
-/* === style.css === /
-
-/ General Reset */
-{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Courier New', Courier, monospace;
-scroll-behavior: smooth;
-cursor: url('cursor-yellow.cur'), auto;,
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color: #000;
-  color: #e9e220;
+  font-family: Arial, sans-serif;
+  background-color: #0d0d0d;
+  color: #f0f0f0;
   line-height: 1.6;
-  overflow-x: hidden;
-}
-
-/* Loading Screen /
-#loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #000;
-  color: #e9e220;
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  font-family: 'Courier New', Courier, monospace;
-  animation: crt-flicker 1.5s ease-in-out;
-}
-
-@keyframes crt-flicker {
-  0% { opacity: 0; }
-  20% { opacity: 1; }
-  40% { opacity: 0.3; }
-  60% { opacity: 1; }
-  80% { opacity: 0.8; }
-  100% { opacity: 1; }
 }
 
 header {
-  background: #000;
   text-align: center;
-  padding: 20px 0;
-  border-bottom: 2px dotted #e9e220;
-  text-shadow: 1px 1px 2px #000;
+  padding: 2rem 1rem;
+  background-color: #1a1a1a;
 }
 
-nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  list-style: none;
-  flex-wrap: wrap;
-}
-
-nav a {
-  color: #e9e220;
-  text-decoration: none;
-  font-size: 1.1em;
-}
-
-nav a:hover {
-  color: white;
-}
-
-.hero {
-  height: 70vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: url('images/GIF FOR WEBSITE.gif') center/cover no-repeat;
-  text-align: center;
-  text-shadow: 2px 2px 4px #000;
-}
-
-.hero h2 {
+header h1 {
   font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.about-description {
-  text-align: center;
-  max-width: 700px;
-  margin: 30px auto;
-  padding: 0 20px;
-  font-size: 1rem;
+header p {
+  font-size: 1.2rem;
+  color: #ccc;
 }
 
-.showreel {
-  text-align: center;
-  padding: 30px 20px;
-  border-top: 2px dotted #e9e220;
-  border-bottom: 2px dotted #e9e220;
-}
-
-.showreel a {
-  color: #e9e220;
-  text-decoration: none;
-  font-size: 1.3em;
+main {
+  padding: 2rem 1rem;
 }
 
 .portfolio {
-  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.portfolio h2 {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  padding: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
 .portfolio-item {
   background-color: #1a1a1a;
-  border: 2px dotted #e9e220;
-  padding: 15px;
-  transition: transform 0.3s ease;
+  padding: 1rem;
+  border-radius: 8px;
   cursor: pointer;
-  position: relative;
+  transition: transform 0.3s ease;
 }
 
 .portfolio-item:hover {
@@ -132,75 +62,62 @@ nav a:hover {
 
 .portfolio-item img {
   width: 100%;
-  border: 2px dotted #e9e220;
-  filter: grayscale(70%);
-  transition: filter 0.3s ease;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
 }
 
-.portfolio-item:hover img {
-  filter: grayscale(0%);
+.portfolio-item p {
+  text-align: center;
+  color: #ccc;
 }
 
+/* Modal styles */
 .modal {
   display: none;
   position: fixed;
-  z-index: 1000;
-  left: 0;
   top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0,0,0,0.85);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
-.modal iframe {
-  width: 80vw;
-  height: 45vw;
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  width: 90%;
   max-width: 800px;
-  max-height: 450px;
-  border: 2px solid #e9e220;
+  aspect-ratio: 16 / 9;
+  background-color: #000;
+  position: relative;
 }
 
-.resume-link {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.resume-link a {
-  color: #e9e220;
-  text-decoration: underline;
-  font-size: 1em;
-}
-
-.contact {
-  text-align: center;
-  padding: 40px 20px;
-}
-
+/* Footer styles */
 footer {
-  background: #000;
-  border-top: 2px dotted #e9e220;
-  padding: 20px 0;
   text-align: center;
-  font-size: 0.9em;
+  padding: 2rem 1rem;
+  background-color: #1a1a1a;
 }
 
-footer a {
-  margin: 0 10px;
-  color: #e9e220;
+.social-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-links li a {
+  color: #f0f0f0;
   text-decoration: none;
-  font-size: 1.2em;
+  transition: color 0.3s ease;
 }
 
-/ Animation Classes */
-section {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-in-out;
-}
-
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
+.social-links li a:hover {
+  color: #ffcc00;
 }
