@@ -1,0 +1,202 @@
+/* ---------- GLOBAL RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+  scroll-behavior: smooth;
+}
+
+/* ---------- COLORS & BASE ---------- */
+body {
+  background-color: #000;
+  color: #f9f236;
+  line-height: 1.6;
+}
+
+/* ---------- HEADER & NAV ---------- */
+header {
+  background-color: #000;
+  color: #f9f236;
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 2px dashed #f9f236;
+  text-shadow: 1px 1px 2px #000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  color: #f9f236;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f9f236;
+  text-shadow: 2px 2px 4px #000;
+  text-align: center;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.hero h2 {
+  font-size: 2.8em;
+}
+
+/* ---------- TEXT SECTIONS ---------- */
+.about-description {
+  max-width: 700px;
+  margin: 20px auto;
+  font-size: 1em;
+  text-align: center;
+  color: #f9f236;
+  line-height: 1.6;
+}
+
+/* ---------- PORTFOLIO GRID ---------- */
+.portfolio {
+  padding: 20px 20px;
+  text-align: center;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  padding: 30px;
+}
+
+.portfolio-item {
+  background: #1a1a1a;
+  padding: 15px;
+  border: 2px dashed #f9f236;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #f9f236;
+}
+
+.portfolio-item img {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  filter: grayscale(70%);
+  transition: filter 0.3s ease;
+  border: 2px dashed #f9f236;
+}
+
+.portfolio-item:hover img {
+  filter: grayscale(0%);
+}
+
+/* ---------- SHOWREEL SECTION ---------- */
+.showreel {
+  padding: 30px 20px;
+  text-align: center;
+  background: #000;
+  border-top: 2px dashed #f9f236;
+  border-bottom: 2px dashed #f9f236;
+  margin: 30px 0;
+}
+
+.showreel a {
+  font-size: 1.2em;
+  color: #f9f236;
+  text-decoration: none;
+}
+
+/* ---------- CONTACT ---------- */
+.contact {
+  text-align: center;
+  padding: 40px 0;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background-color: #000;
+  color: #f9f236;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9em;
+}
+
+/* ---------- ANIMATION: SCROLL IN ---------- */
+section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- MODAL ---------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; 
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal iframe, .modal img {
+  width: 90vw;
+  height: 50vw;
+  max-width: 800px;
+  max-height: 450px;
+  border: 2px dashed #f9f236;
+  box-shadow: 0 0 20px #f9f236;
+  background: #000;
+  object-fit: contain;
+}
+
+.modal.show {
+  display: flex;
+}
+
+/* ---------- CRT EFFECT (OPTIONAL) ---------- */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 2px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 1000;
+}
