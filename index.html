@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zac Main ~ Visual Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Courier New', Courier, monospace;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #000;
+      color: #f9f236;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #000;
+      color: #f9f236;
+      padding: 20px 0;
+      text-align: center;
+      border-bottom: 2px dashed #f9f236;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #f9f236;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    .hero {
+      background: url('images/GIF FOR WEBSITE.gif') center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #f9f236;
+      text-shadow: 2px 2px 4px #000;
+      text-align: center;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    .hero h2 {
+      font-size: 2.8em;
+    }
+
+    .about-description {
+      max-width: 700px;
+      margin: 20px auto;
+      font-size: 1em;
+      text-align: center;
+      color: #f9f236;
+      line-height: 1.6;
+    }
+
+    .portfolio {
+      padding: 20px 20px;
+      text-align: center;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 30px;
+      padding: 30px;
+    }
+
+    .portfolio-item {
+      background: #1a1a1a;
+      padding: 15px;
+      border: 2px dashed #f9f236;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .portfolio-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #f9f236;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      display: block;
+      margin-bottom: 10px;
+      filter: grayscale(70%);
+      transition: filter 0.3s ease;
+      border: 2px dashed #f9f236;
+    }
+
+    .portfolio-item:hover img {
+      filter: grayscale(0%);
+    }
+
+    .showreel {
+      padding: 30px 20px;
+      text-align: center;
+      background: #000;
+      border-top: 2px dashed #f9f236;
+      border-bottom: 2px dashed #f9f236;
+      margin: 30px 0;
+    }
+
+    .showreel a {
+      font-size: 1.2em;
+      color: #f9f236;
+      text-decoration: none;
+    }
+
+    .contact {
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    footer {
+      background-color: #000;
+      color: #f9f236;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9em;
+    }
+
+    section {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal iframe {
+      width: 90vw;
+      height: 50vw;
+      max-width: 800px;
+      max-height: 450px;
+      border: 2px dashed #f9f236;
+      box-shadow: 0 0 20px #f9f236;
+      background: #000;
+    }
+
+    .modal.show {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>~ Zac Main ~</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#showreel">Showreel</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="about">
+    <h2>Making the things, you never knew you needed.</h2>
+  </section>
+
+  <section class="about-description">
+    <p>I'm Zac Main, a creative and dedicated filmmaker specializing in music video production and personal film projects. I bring stories to life with a distinct visual style and a passion for innovative storytelling.</p>
+  </section>
+
+  <section id="showreel" class="showreel">
+    <h2><a href="https://youtu.be/5CRfA6Is5AM" target="_blank">SHOWREEL - CLICK TO WATCH</a></h2>
+  </section>
+
+  <section id="portfolio" class="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item" data-video="1fZWqMjwHTw">
+        <img src="images/thumbnail downhill.JPG" alt="Project Image">
+        <h3>Down Hill</h3><h4>by The Ivy Walkers</h4><p>Role: Director, Editor</p>
+      </div>
+      <div class="portfolio-item" data-video="XdUUYkiP4eA">
+        <img src="images/d & d thumbnail.jpg" alt="Project Image">
+        <h3>drunk and disorderly,</h3><h4>by ORPHIX</h4><p>Role: Director, Editor</p>
+      </div>
+      <div class="portfolio-item" data-video="81l8zJDXplI">
+        <img src="images/THUMBNAIL summer.JPG" alt="Project Image">
+        <h3>Summer Days</h3><h4>by The Ivy Walkers</h4><p>Role: Director, Editor</p>
+         </div>
+      <div class="portfolio-item" data-video="H7t2FL1SRaE">
+        <img src="images/deadstick gizz my edit.png" alt="Project Image">
+        <h3>Deadstick</h3><h4>by King Gizzard & the Lizard Wizard</h4><p>Role: Runner</p>
+      </div>
+      <div class="portfolio-item" data-video="cHrX53ES8Mk">
+        <img src="images/thumbnail grape.jpg" alt="Project Image">
+        <h3>Grapefruit</h3><h4>by ORPHIX</h4><p>Role: Director, Editor</p>
+      </div>
+      <div class="portfolio-item" data-video="EpDjfIQAk_c">
+        <img src="images/thumbnail night cat.JPG" alt="Project Image">
+        <h3>Live at the Night Cat</h3><h4>By The Ivy Walkers</h4><p>Role: Director, Editor</p>
+      </div>
+      <div class="portfolio-item" data-video="ye-twUXxbUo">
+        <img src="images/endless thumbnail.png" alt="Project Image">
+        <h3>Endless</h3><p>Role: Director, Editor</p>
+      </div>
+      <div class="portfolio-item" data-video="nhcy6MMZZ_4">
+        <img src="images/thumbnail render.JPG" alt="Project Image">
+        <h3>Blender_Render.OBJ</h3><p>Role: Director, Editor, 3D Artist</p>
+      </div>
+      <div class="portfolio-item" data-video="imP8A_xlB2s">
+        <img src="images/thumnail cult.JPG" alt="Project Image">
+        <h3>CultConcept_Cloth_Test.ZIP</h3><p>Role: Director, Editor</p>
+      </div>
+      <div class="portfolio-item" data-video="mPp0OqyPd5s">
+        <img src="images/thumbnail right rar.JPG" alt="Project Image">
+        <h3>the_right_choice.rar</h3><p>Role: Director, Editor</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <hr style="border: 1px dashed #f9f236; margin: 30px auto; width: 60% auto;">
+  <h2>Contact Me</h2>
+  <p>Email: zacbmx60@gmail.com</p>
+    <p1>Insta: zac_personal_main</p1>
+  <p><a href="images/cover letter.pdf" download style="color: #f9f236; text-decoration: underline;">Download Cover Letter</a></p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Zac Main. All rights reserved. | Self~Titled</p>
+</footer>
+
+
+  <div class="modal" id="videoModal">
+    <iframe id="modalIframe" src="" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <script>
+    document.addEventListener('scroll', function() {
+      document.querySelectorAll('section').forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          section.classList.add('visible');
+        }
+      });
+    });
+
+    const modal = document.getElementById("videoModal");
+    const iframe = document.getElementById("modalIframe");
+
+    document.querySelectorAll(".portfolio-item").forEach(item => {
+      item.addEventListener("click", () => {
+        const videoId = item.getAttribute("data-video");
+        if (videoId) {
+          iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+          modal.classList.add("show");
+        }
+      });
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        iframe.src = "";
+        modal.classList.remove("show");
+      }
+    });
+  </script>
+</body>
+</html>
